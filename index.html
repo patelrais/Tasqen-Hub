@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasqen - Free Online Tools &amp; Utilities</title>
+<meta name="description" content="Tasqen is a growing collection of free online tools and utilities, starting with a JSON Viewer for formatting, browsing and searching JSON data. Fast, browser-based, no signup required.">
+<meta name="keywords" content="tasqen, free online tools, developer tools, web utilities, json viewer, online utilities, dev tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tasqen.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tasqen">
+<meta property="og:title" content="Tasqen - Free Online Tools & Utilities">
+<meta property="og:description" content="A growing collection of free online tools and utilities, starting with a JSON Viewer for formatting, browsing and searching JSON data.">
+<meta property="og:url" content="https://tasqen.com/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tasqen - Free Online Tools & Utilities">
+<meta name="twitter:description" content="A growing collection of free online tools and utilities, starting with a JSON Viewer for formatting, browsing and searching JSON data.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tasqen",
+  "url": "https://tasqen.com/",
+  "description": "A growing collection of free online tools and utilities.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "RTSoftwares",
+    "url": "https://rt-softwares.com"
+  },
+  "hasPart": [
+    {
+      "@type": "WebApplication",
+      "name": "JSON Viewer",
+      "url": "https://jsonviewer.tasqen.com/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#f4f5f8;
+    --card-border:#e4e6ee;
+    --text:#1a1f28;
+    --muted:#6b7280;
+    --icon-bg:#4f6bed;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12161d;
+      --card-border:#2a3140;
+      --text:#e4e7ee;
+      --muted:#8a92a3;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:60px 20px 40px;
+  }
+  .wrap{width:100%;max-width:560px;}
+
+  .brand{text-align:center;margin-bottom:36px;}
+  .brand-icon{
+    width:88px;height:88px;
+    border-radius:50%;
+    border:2px solid var(--card-border);
+    background:transparent;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;
+  }
+  .brand h1{font-size:24px;margin:0 0 6px;font-weight:800;}
+  .brand p{margin:0;color:var(--muted);font-size:14px;}
+
+  .cards{display:flex;flex-direction:column;gap:12px;}
+  .card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px;
+    border-radius:12px;
+    border:1px solid var(--card-border);
+    text-decoration:none;
+    color:inherit;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .card:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(20,25,35,.08);}
+  .card-icon{
+    flex:none;
+    width:38px;height:38px;
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+    font-weight:800;
+    color:#fff;
+  }
+  .card-body{flex:1;min-width:0;}
+  .card-name{font-weight:700;font-size:15px;}
+  .card-desc{font-size:12px;color:var(--muted);margin-top:2px;}
+  .card-arrow{flex:none;color:var(--muted);font-size:18px;}
+
+  .card.json{background:#fdeef1;border-color:#f6cdd6;}
+  .card.json .card-icon{background:#e0587a;}
+  .card.json .card-name{color:#a3324e;}
+
+  footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted);}
+  footer a{color:inherit;font-weight:600;text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-icon"><img src="data:image/png;base64,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" alt="RTSoftwares" style="width:56px;height:56px;"></div>
+      <h1>tasqen.com</h1>
+      <p>Free online tools &amp; utilities</p>
+    </div>
+
+    <div class="cards">
+      <a class="card json" href="https://jsonviewer.tasqen.com/" rel="noopener">
+        <div class="card-icon">{ }</div>
+        <div class="card-body">
+          <div class="card-name">JSON Viewer</div>
+          <div class="card-desc">Format, browse and search JSON as a tree</div>
+        </div>
+        <div class="card-arrow">&#8594;</div>
+      </a>
+    </div>
+
+    <footer>A tool by <a href="https://rt-softwares.com" target="_blank" rel="noopener">RTSoftwares</a></footer>
+  </div>
+</body>
+</html>
