@@ -56,6 +56,14 @@
       "applicationCategory": "SecurityApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "CSV Viewer",
+      "url": "https://csv.tasqen.com/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
   ]
 }
@@ -141,6 +149,10 @@
   .card.pwd .card-icon{background:#5b57d1;letter-spacing:1px;}
   .card.pwd .card-name{color:#3d3aa0;}
 
+  .card.csv{background:#e6f6f8;border-color:#c3e8ec;}
+  .card.csv .card-icon{background:#0f8a9e;font-size:12px;}
+  .card.csv .card-name{color:#0b6577;}
+
   footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted);}
   footer a{color:inherit;font-weight:600;text-decoration:none;}
   footer a:hover{text-decoration:underline;}
@@ -176,6 +188,14 @@
         <div class="card-body">
           <div class="card-name">Password Generator</div>
           <div class="card-desc">Generate strong, random passwords</div>
+        </div>
+        <div class="card-arrow">&#8594;</div>
+      </a>
+      <a class="card csv" href="https://csv.tasqen.com/" rel="noopener">
+        <div class="card-icon">CSV</div>
+        <div class="card-body">
+          <div class="card-name">CSV Viewer</div>
+          <div class="card-desc">View CSV as a table, export to Excel</div>
         </div>
         <div class="card-arrow">&#8594;</div>
       </a>
