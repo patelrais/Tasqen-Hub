@@ -64,6 +64,14 @@
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "QR Code Generator",
+      "url": "https://qr.tasqen.com/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
   ]
 }
@@ -153,6 +161,10 @@
   .card.csv .card-icon{background:#0f8a9e;font-size:12px;}
   .card.csv .card-name{color:#0b6577;}
 
+  .card.qr{background:#eefaf0;border-color:#c9edd0;}
+  .card.qr .card-icon{background:#1f9d55;font-size:14px;}
+  .card.qr .card-name{color:#166b3a;}
+
   footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted);}
   footer a{color:inherit;font-weight:600;text-decoration:none;}
   footer a:hover{text-decoration:underline;}
@@ -196,6 +208,14 @@
         <div class="card-body">
           <div class="card-name">CSV Viewer</div>
           <div class="card-desc">View CSV as a table, export to Excel</div>
+        </div>
+        <div class="card-arrow">&#8594;</div>
+      </a>
+      <a class="card qr" href="https://qr.tasqen.com/" rel="noopener">
+        <div class="card-icon">QR</div>
+        <div class="card-body">
+          <div class="card-name">QR Code Generator</div>
+          <div class="card-desc">Custom QR codes with a logo, free</div>
         </div>
         <div class="card-arrow">&#8594;</div>
       </a>
