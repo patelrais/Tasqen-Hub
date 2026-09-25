@@ -48,6 +48,14 @@
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Password Generator",
+      "url": "https://password.tasqen.com/",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
   ]
 }
@@ -129,6 +137,10 @@
   .card.html .card-icon{background:#e08a2f;font-size:14px;}
   .card.html .card-name{color:#a3641f;}
 
+  .card.pwd{background:#eef0fd;border-color:#d9defa;}
+  .card.pwd .card-icon{background:#5b57d1;letter-spacing:1px;}
+  .card.pwd .card-name{color:#3d3aa0;}
+
   footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted);}
   footer a{color:inherit;font-weight:600;text-decoration:none;}
   footer a:hover{text-decoration:underline;}
@@ -156,6 +168,14 @@
         <div class="card-body">
           <div class="card-name">HTML Viewer</div>
           <div class="card-desc">Live preview, beautify and minify HTML</div>
+        </div>
+        <div class="card-arrow">&#8594;</div>
+      </a>
+      <a class="card pwd" href="https://password.tasqen.com/" rel="noopener">
+        <div class="card-icon">&bull;&bull;&bull;</div>
+        <div class="card-body">
+          <div class="card-name">Password Generator</div>
+          <div class="card-desc">Generate strong, random passwords</div>
         </div>
         <div class="card-arrow">&#8594;</div>
       </a>
