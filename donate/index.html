@@ -71,6 +71,26 @@
   .amount .price{font-size:26px;font-weight:800;}
   .amount .label{font-size:12px;color:var(--muted);}
 
+  .custom{
+    display:none;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+    padding:16px;margin-bottom:20px;
+    background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;
+  }
+  .custom.show{display:flex;}
+  .custom label{font-size:13px;color:var(--muted);}
+  .custom .field{display:flex;align-items:center;gap:4px;font-weight:700;}
+  .custom input{
+    width:90px;padding:9px 10px;font-size:15px;font-family:inherit;
+    color:var(--text);background:var(--bg);border:1px solid var(--card-border);border-radius:8px;outline:none;
+  }
+  .custom input:focus{border-color:var(--accent);}
+  .custom button{
+    padding:10px 18px;font-size:14px;font-weight:700;font-family:inherit;color:#fff;
+    background:var(--accent);border:none;border-radius:8px;cursor:pointer;
+  }
+  .custom button:hover{background:var(--accent-hover);}
+  .custom .err{flex-basis:100%;text-align:center;font-size:12px;color:#c0392b;min-height:0;}
+
   .note{text-align:center;font-size:12px;color:var(--muted);line-height:1.6;margin:0 0 10px;}
   .thanks{
     display:none;text-align:center;padding:16px;margin-bottom:20px;
@@ -108,6 +128,13 @@
       </button>
     </div>
 
+    <div class="custom" id="custom">
+      <label for="customAmount">Or enter your own amount</label>
+      <span class="field">$<input type="number" id="customAmount" min="1" max="500" step="1" inputmode="numeric" placeholder="25"></span>
+      <button type="button" id="customBtn">Donate</button>
+      <div class="err" id="customErr"></div>
+    </div>
+
     <p class="note">Payments are processed securely by Paddle. We never see your card details.</p>
 
     <div class="back"><a href="/">&larr; Back to all tools</a></div>
@@ -139,10 +166,43 @@
     btn.addEventListener('click', function(){ open(btn); });
   });
 
-  // Tool pages link here as /donate/?a=5|10|15 - open that amount straight away.
+  // Custom amount = whole dollars, sent as the quantity of a $1 Paddle price.
+  // Paste that price's ID here (and set its max quantity to MAX_CUSTOM in Paddle)
+  // to switch the "enter your own amount" box on; empty keeps it hidden.
+  var CUSTOM_PRICE_ID = '';
+  var MIN_CUSTOM = 1, MAX_CUSTOM = 500;
+  var customBox = document.getElementById('custom');
+  var customInput = document.getElementById('customAmount');
+  var customErr = document.getElementById('customErr');
+
+  function openCustom(amount){
+    Paddle.Checkout.open({ items: [{ priceId: CUSTOM_PRICE_ID, quantity: amount }] });
+  }
+  if (CUSTOM_PRICE_ID){
+    customBox.classList.add('show');
+    var submitCustom = function(){
+      var n = Number(customInput.value);
+      if (!Number.isInteger(n) || n < MIN_CUSTOM || n > MAX_CUSTOM){
+        customErr.textContent = 'Enter a whole amount between $' + MIN_CUSTOM + ' and $' + MAX_CUSTOM + '.';
+        return;
+      }
+      customErr.textContent = '';
+      openCustom(n);
+    };
+    document.getElementById('customBtn').addEventListener('click', submitCustom);
+    customInput.addEventListener('keydown', function(ev){ if (ev.key === 'Enter') submitCustom(); });
+  }
+
+  // Tool pages link here as /donate/?a=5|10|15 (or any whole amount) - open it straight away.
   var wanted = new URLSearchParams(location.search).get('a');
   if (wanted){
-    buttons.forEach(function(btn){ if (btn.dataset.amount === wanted) open(btn); });
+    var preset = null;
+    buttons.forEach(function(btn){ if (btn.dataset.amount === wanted) preset = btn; });
+    if (preset) open(preset);
+    else if (CUSTOM_PRICE_ID){
+      var n = Number(wanted);
+      if (Number.isInteger(n) && n >= MIN_CUSTOM && n <= MAX_CUSTOM) openCustom(n);
+    }
   }
 })();
 </script>
