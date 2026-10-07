@@ -92,6 +92,14 @@
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Any",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "JWT Decoder & Encoder",
+      "url": "https://jwt.tasqen.com/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
   ]
 }
@@ -193,6 +201,10 @@
   .card.b64 .card-icon{background:#7b4fd0;font-size:11px;}
   .card.b64 .card-name{color:#5a35a0;}
 
+  .card.jwt{background:#fdeef4;border-color:#f6cfe0;}
+  .card.jwt .card-icon{background:#d6336c;font-size:11px;}
+  .card.jwt .card-name{color:#a3224d;}
+
   footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted);}
   footer a{color:inherit;font-weight:600;text-decoration:none;}
   footer a:hover{text-decoration:underline;}
@@ -260,6 +272,14 @@
         <div class="card-body">
           <div class="card-name">Base64 Converter</div>
           <div class="card-desc">Base64 to image, PDF or file, and back</div>
+        </div>
+        <div class="card-arrow">&#8594;</div>
+      </a>
+      <a class="card jwt" href="https://jwt.tasqen.com/" rel="noopener">
+        <div class="card-icon">JWT</div>
+        <div class="card-body">
+          <div class="card-name">JWT Decoder & Encoder</div>
+          <div class="card-desc">Decode, verify and create JSON Web Tokens</div>
         </div>
         <div class="card-arrow">&#8594;</div>
       </a>
